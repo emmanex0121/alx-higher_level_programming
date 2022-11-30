@@ -2,4 +2,4 @@
 
 for i in range(0, 99):
     #print("{:d} = {:#x}".format(i, i))
-    print("{:d} = {}".format(i, hex(i)))
+    print("{} = {}".format(i, hex(i)))
