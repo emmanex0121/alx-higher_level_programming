@@ -1,6 +1,10 @@
 #include "lists.h"
 
 /**
+ * check_cycle - checks for loop in singly linked list
+ * @list: singly-linked list
+ *
+ * Return: 0 if no loop is found and 1 if it contains a cycle
  */
 
 int check_cycle(listint_t *list)
