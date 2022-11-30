@@ -2,6 +2,6 @@
 
 for num in range(0, 100):
     if num != 99:
-        print("{:d}".format(num), end=', ')
+        print("{:02d}".format(num), end=', ')
     else:
-        print("{:d}".format(num))
+        print("{:02d}".format(num))
