@@ -12,4 +12,3 @@ else:
 for i in range(1, len(argv)):
     count = i
     print("{:d}: {}".format(i, argv[i]))
-
