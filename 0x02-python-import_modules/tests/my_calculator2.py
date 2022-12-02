@@ -15,6 +15,7 @@ else:
     """tests the operator input against the list content"""
     if argv[2] not in list(ops.keys()):
         print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
     else:
         a = int(argv[1])
         b = int(argv[3])
