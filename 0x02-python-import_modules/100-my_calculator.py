@@ -6,13 +6,14 @@ if __name__ == "__main__":
     argv = sys.argv
 
 #ops = ['+', '-', '*', '/']
-a = int(argv[1])
-b = int(argv[3])
+
 
 if len(argv) != 4:
     print("Usage: ./100-my_calculator.py <a> <operator> <b>")
     sys.exit(1)
 else:
+    a = int(argv[1])
+    b = int(argv[3])
     if argv[2] == '+':
         print("{:d} + {:d} = {:d}".format(add(a, b)))
     elif argv[2] == '-':
@@ -22,5 +23,5 @@ else:
     elif argv[2] == '/':
         print("{:d} / {:d} = {:d}".format(div(a, b)))
     else:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
