@@ -5,8 +5,7 @@ if __name__ == "__main__":
     import sys
     argv = sys.argv
 
-#ops = ['+', '-', '*', '/']
-
+"""ops = ['+', '-', '*', '/']"""
 
 if len(argv) != 4:
     print("Usage: ./100-my_calculator.py <a> <operator> <b>")
