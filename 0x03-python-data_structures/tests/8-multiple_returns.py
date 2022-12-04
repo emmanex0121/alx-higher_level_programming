@@ -3,7 +3,10 @@
 def multiple_returns(sentence):
     str_len = len(sentence)
     str_first = sentence[0]
-    return (str_len, str_first)
+    if str_len = 0:
+        return (str_len, None)
+    else:
+        return (str_len, str_first)
 
     '''
             OR DO THIS
