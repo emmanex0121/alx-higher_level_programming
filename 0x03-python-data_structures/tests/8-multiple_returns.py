@@ -2,10 +2,12 @@
 
 def multiple_returns(sentence):
     str_len = len(sentence)
-    str_first = sentence[0]
-    if str_len = 0:
-        return (str_len, None)
+    
+    if str_len == 0:
+        str_first = None
+        return (str_len, str_first)
     else:
+        str_first = sentence[0]
         return (str_len, str_first)
 
     '''
