@@ -5,4 +5,7 @@ def print_matrix_integer(matrix=[[]]):
     for elem in matrix:
         print(end = '\n')
         for num in elem:
-            print("{:d} ".format(num), end = '')
+            if num == elem[-1]:
+                print("{:d} ".format(num))
+            else:
+                print("{:d} ".format(num), end = '')
