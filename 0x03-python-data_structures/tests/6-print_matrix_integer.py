@@ -3,6 +3,8 @@
 def print_matrix_integer(matrix=[[]]):
     new = []
     for elem in matrix:
-        print(end = '\n')
         for num in elem:
-            print("{:d}".format(num), end = '\n' if num == elem[-1] else ' ')
+            if num == elem[-1]:
+                print('{:d}'.format(num))
+            else:
+                print('{:d}'.format(num), end = ' ')
