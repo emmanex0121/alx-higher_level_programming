@@ -1,7 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include "Lists.h"
-
 #include "lists.h"
 
 /**
