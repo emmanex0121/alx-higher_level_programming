@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 4-square.py by Phoenix
+# 5-square.py by Phoenix
 """Defines a square """
 
 
