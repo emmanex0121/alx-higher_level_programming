@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 5-square.py by Phoenix
+# 6-square.py by Phoenix
 """Defines a square """
 
 
@@ -29,6 +29,11 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """set the position of this Square
+        Args: value as a tuple of two positive integers
+        Raises:
+            TypeError: if value is not a tuple or any int in tuple < 0
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
