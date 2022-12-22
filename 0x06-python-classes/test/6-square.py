@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 5-square.py by Phoenix
+# 6-square.py by Phoenix
 """Defines a square """
 
 
@@ -65,12 +65,21 @@ class Square:
         x = self.__size ** 2
         return x
 
-    def my_print(self):
-        """print the square in # """
+    def pos_print(self):
+        """returns the position in spaces"""
+        pos = ""
+        if self.size == 0:
+            return "\n"
+        for w in range(self.position[1]):
+            pos += "\n"
+        for w in range(self.size):
+            for i in range(self.position[0]):
+                pos += " "
+            for j in range(self.size):
+                pos += "#"
+            pos += "\n"
+        return pos
 
-        if self.__size == 0:
-            print()
-        else:
-            sz = self.__size
-            for i in range(sz):
-                print("#" * sz)
+    def my_print(self):
+        """print the square in position"""
+        print(self.pos_print(), end='')
