@@ -21,6 +21,9 @@ class Square:
         self.__size = size
         self.__position = position
 
+    def __str__(self):
+        self.my_print()
+
     @property
     def size(self):
         """Retrieves size of square"""
