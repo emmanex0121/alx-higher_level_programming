@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 # 0-add_integer.py by PHOENIX
 """
-
 This module contains a function that adds two numbers
-
 """
 
 
