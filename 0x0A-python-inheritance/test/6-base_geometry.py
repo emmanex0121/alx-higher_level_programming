@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """ EBase Geometry Class """
+    """ Base Geometry Class """
     def area(self):
         """ Raises and Exception """
         raise Exception("area() is not implemented")
