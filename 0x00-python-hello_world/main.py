@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print("Best School")
+print("Phoenix is texting this stuff with monty")
