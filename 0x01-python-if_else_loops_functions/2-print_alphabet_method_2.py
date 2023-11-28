@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-
+alpha = ""
 for i in range(97, 123):
-    print("{:c}".format(i), end='')
+    alpha += chr(i)
+print(alpha)
