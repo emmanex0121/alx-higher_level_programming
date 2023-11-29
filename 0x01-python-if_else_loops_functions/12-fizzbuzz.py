@@ -9,4 +9,4 @@ for i in range(1, 101):
     elif i % 5 == 0:
         print(f"{'Buzz'}", end=' ')
     else:
-        print(f"{i}", end=' ')
+        print(f"{i:d}", end=' ')
