@@ -1,31 +1,51 @@
 #!/usr/bin/python3
-# 0-add_integer.py by PHOENIX
+# PROGRAM BY PHOENIX
+
 """
-
-This module contains a function that adds two numbers
-
+    module add_integer
 """
 
 
 def add_integer(a, b=98):
-    """ Function that adds two integer and/or float values
+    """Function That Adds the integer arguments.
 
-    Args:
-        a: First Number
-        b: Second Number
+    example in list with integer values:
+    >>> [add_integer(n+2, n) for n in range(5)]
+    [2, 4, 6, 8, 10]
 
-    Returns:
-        The sum of the input values
+    Negative int are allowed:
+    >>> add_integer(-3, 6)
+    3
 
-    Raises:
-        TypeError: If a or b are not integer or float numbers
+    floats are casted/converted to int:
+    >>> add_integer(3.9, 5)
+    8
+
+    >>> add_integer(7, 5.5)
+    12
+
+    Strings are not allowed and will raise a TypeError:
+    >>> add_integer(-3, "string")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer("h", 14)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
 
     """
 
-    if not isinstance(a, int) and not isinstance(a, float):
+    if type(a) not in (float, int):
         raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
+    if type(b) not in (float, int):
         raise TypeError("b must be an integer")
     a = int(a)
     b = int(b)
     return a + b
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
