@@ -1,0 +1,30 @@
+****	PROGRAM TESTFILE BY PHOENIX	*****
+===========START===========START==============
+
+
+	Importing the say_my_name module:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+	Test Case first name is int:
+	>>> say_my_name(12, "phoenix")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	Test case last name is list:
+	>>> say_my_name("kheed", ["a", 12])
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+	Test case for when first and last name is not string:
+	>>> say_my_name(16, {"me", "you"})
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	Test case first and last name is string
+	>>> say_my_name("Phoenix", "Kheed")
+	My name is Phoenix Kheed
+
+===========END=============END=================
