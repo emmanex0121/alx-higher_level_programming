@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# program By Phoenix
 """ Module that contains function that test direct or indirect inheritance
     of class
 """
