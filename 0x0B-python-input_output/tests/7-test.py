@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 # Program By Phoenix
-""" Scripts that adds and appends all command line inputs to list"""
 from sys import argv
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-
 a = []
-a = argv[1:]
+a += argv[1:]
 #for i in range(1, len(argv)):
     #a.append(argv[i])
 
