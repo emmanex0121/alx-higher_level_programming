@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Program By Phoenix
 """ Checks if object is an instance of a class """
 
 

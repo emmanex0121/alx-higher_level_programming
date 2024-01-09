@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# program By Phoenix
 """ This module holds function that checks object instance """
 
 
@@ -7,4 +8,4 @@ def is_kind_of_class(obj, a_class):
         is an instance of a class that inherited from, the specified class
         Otherwise False
     """
-    return (isinstance(obj, a_class))
+    return isinstance(obj, a_class)
