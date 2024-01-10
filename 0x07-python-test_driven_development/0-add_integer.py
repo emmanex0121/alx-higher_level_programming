@@ -1,22 +1,15 @@
 #!/usr/bin/python3
-""" 0-add_integer Module """
+# PROGRAM BY PHOENIX
+""" module add_integer """
 
 
 def add_integer(a, b=98):
-    """
-    Adds two integers
+    """Function That Adds the integer arguments."""
 
-    Args:
-        a: first integer
-        b: second integer
-
-    Returns:
-        addition of two integers
-    """
-    if type(a) is not int and type(a) is not float:
+    if type(a) not in (float, int):
         raise TypeError("a must be an integer")
-    elif type(b) is not int and type(b) is not float:
+    if type(b) not in (float, int):
         raise TypeError("b must be an integer")
-    else:
-        new_a, new_b = int(a), int(b)
-        return new_a + new_b
+    a = int(a)
+    b = int(b)
+    return a + b
