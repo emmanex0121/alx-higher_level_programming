@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# PROGRAM BY PHOENIX
 """ module add_integer """
 
 
