@@ -53,11 +53,11 @@
 
 	Empty String:
 	>>> say_my_name("Phoenix", "")
-	My name is Phoenix
+	My name is Phoenix 
 
 	Empty String last:
 	>>> say_my_name("", "Phoenix")
-        My name is Phoenix
+        My name is  Phoenix
 
 =============
 	Test case for boolean input:
@@ -122,7 +122,7 @@
 =================
 	Test case for incomplete and too many arguments:
 	>>> say_my_name("Phoenix")
-	My name is phoenix
+	My name is Phoenix 
 
 	>>> say_my_name(20)
 	Traceback (most recent call last):
