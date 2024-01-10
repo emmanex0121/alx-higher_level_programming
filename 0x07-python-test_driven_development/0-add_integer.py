@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # PROGRAM BY PHOENIX
-"""
-    module add_integer
-"""
+""" module add_integer """
 
 
 def add_integer(a, b=98):
@@ -15,10 +13,3 @@ def add_integer(a, b=98):
     a = int(a)
     b = int(b)
     return a + b
-
-
-"""
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
-"""
