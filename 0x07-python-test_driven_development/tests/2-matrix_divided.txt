@@ -104,13 +104,13 @@ Traceback (most recent call last):
 TypeError: div must be a number
 
 case of not enough arguments:
->>> matrix_divided(matrix, "he")
+>>> matrix_divided(matrix)
 Traceback (most recent call last):
         ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
 case of no arguments:
->>> matrix_divided(matrix, "he")
+>>> matrix_divided()
 Traceback (most recent call last):
         ...
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
