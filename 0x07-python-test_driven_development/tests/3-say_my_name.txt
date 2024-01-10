@@ -5,26 +5,100 @@
 	Importing the say_my_name module:
 	>>> say_my_name = __import__('3-say_my_name').say_my_name
 
+=================
 	Test Case first name is int:
 	>>> say_my_name(12, "phoenix")
 	Traceback (most recent call last):
 		...
 	TypeError: first_name must be a string
 
+===============
 	Test case last name is list:
 	>>> say_my_name("kheed", ["a", 12])
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
 
+================
 	Test case for when first and last name is not string:
 	>>> say_my_name(16, {"me", "you"})
 	Traceback (most recent call last):
 		...
 	TypeError: first_name must be a string
 
+	>>> say_my_name(True, 16)
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name([12, "now"], 16)
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+===============
 	Test case first and last name is string
 	>>> say_my_name("Phoenix", "Kheed")
 	My name is Phoenix Kheed
+
+=============
+	Test case for boolean input:
+	>>> say_my_name("Phoenix", True)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+	>>> say_my_name(True, "Phoenix")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+=============
+	Test case for float:
+	>>> say_my_name("Phoenix", 12.8)
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+	>>> say_my_name(12.8, "Phoenix")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+==============
+	Test case for int:
+	>>> say_my_name(15, "Phoenix")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name("Phoenix", 15)
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+================
+	Test case for tuple:
+	>>> say_my_name(("name", 7), "Phoenix")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name("Phoenix", (3, 7))
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+==================
+	Test case for dict:
+	>>> say_my_name({3, 9}, "Phoenix")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name("Phoenix", {7, 0})
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
 
 ===========END=============END=================
