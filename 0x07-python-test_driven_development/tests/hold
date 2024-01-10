@@ -1,0 +1,33 @@
+The PHOENIX 0-add_integer.txt module test
+=========================================
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+	>>> add_integer(12, 3)
+	15
+
+	>>> add_integer(12.3, 6)
+	18
+
+	>>> add_integer(9, 3.6)
+	12
+
+	>>> add_integer("s", 6)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(10, "tunde")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> ([add_integer(n*2, n) for n in range(5)], [add_integer(n, n+2) for n in range(5)])
+	([0, 3, 6, 9, 12], [2, 4, 6, 8, 10])
+
+	>>> d = 8
+	>>> e = 19
+	>>> print(add_integer(d, e))
+	27
+
+==================THE END===================
