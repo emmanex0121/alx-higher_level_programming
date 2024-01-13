@@ -62,7 +62,15 @@ class Rectangle(Base):
         for i in range(self.__height):
             print("#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+
+        if len(args) < 1:
+            for key in kwargs:
+                self.__setattr__(key, kwargs[key])
+# or
+# for key, value in kwargs.items():
+# self.__setattr__(key, value)
+
         try:
             self.id = args[0]
             self.__width = args[1]
