@@ -54,8 +54,8 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """ Public method that returns the areaof the traingle """
-        return self.__height * self.__width
+        """ Public method that returns the area of the traingle """
+        return (self.__height * self.__width)
 
     def display(self):
         """ prints rectangle using # char """
@@ -81,7 +81,8 @@ class Rectangle(Base):
             pass
 
     def __str__(self):
-        msg = "[Rectangle] ({:d}) {:d}".format(self.id, self.__x)
+        msg = "[{}]".format(self.__class__.__name__)
+        msg = msg + " ({:d}) {:d}".format(self.id, self.__x)
         msg = msg + "/{:d}".format(self.__y)
         msg = msg + " - {:d}/{:d}".format(self.__width, self.__height)
         return msg
