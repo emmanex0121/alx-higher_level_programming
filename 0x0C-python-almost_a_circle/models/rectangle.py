@@ -3,6 +3,7 @@
 """ module First Rectangle """
 from models.base import Base
 
+
 def run_checks(**kwargs):
     """
         Function creates valuecheck and Typecheck functions
@@ -29,17 +30,17 @@ def run_checks(**kwargs):
             Raises a ValueError if value < 0 for x and y
         """
         for value in values:
-            if value in ("width","height"):
+            if value in ("width", "height"):
                 if values[value] <= 0:
                     raise ValueError(f"{value} must be > 0")
-            if value in ("x","y"):
+            if value in ("x", "y"):
                 if values[value] < 0:
                     raise ValueError(f"{value} must be >= 0")
 
     type_check(**kwargs)
     value_check(**kwargs)
 
-    
+
 class Rectangle(Base):
     """ Rectangle class inheriting from base class """
 
@@ -60,6 +61,12 @@ class Rectangle(Base):
         for i in range(self.__height):
             print("#" * self.__width)
 
+    def __str__(self):
+        msg = "[Rectangle] ({:d}) {:d}".format(self.id, self.__x)
+        msg = msg + "/{:d}".format(self.__y)
+        msg = msg + " - {:d}/{:d}".format(self.__width, self.__height)
+        return msg
+
     @property
     def width(self):
         return self.__width
@@ -68,7 +75,7 @@ class Rectangle(Base):
     def width(self, width):
         run_checks(width=width)
         self.__width = width
-    
+
     @property
     def height(self):
         return self.__height
