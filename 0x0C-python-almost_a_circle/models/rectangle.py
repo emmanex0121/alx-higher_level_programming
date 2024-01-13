@@ -58,8 +58,19 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        """ prints rectangle using # char """
         for i in range(self.__height):
             print("#" * self.__width)
+
+    def update(self, *args):
+        try:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
+        except IndexError:
+            pass
 
     def __str__(self):
         msg = "[Rectangle] ({:d}) {:d}".format(self.id, self.__x)
