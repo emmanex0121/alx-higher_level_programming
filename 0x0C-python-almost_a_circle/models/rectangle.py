@@ -56,6 +56,10 @@ class Rectangle(Base):
         """ Public method that returns the areaof the traingle """
         return self.__height * self.__width
 
+    def display(self):
+        for i in range(self.__height):
+            print("#" * self.__width)
+
     @property
     def width(self):
         return self.__width
