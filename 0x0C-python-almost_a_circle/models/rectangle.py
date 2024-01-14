@@ -63,66 +63,113 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def update(self, *args, **kwargs):
+        """
+            assigns key/value argument to attributes
+            kwargs is skipped if args is not empty
+            Args:
+                *args -  variable number of no-keyword args
+                **kwargs - variable number of keyworded args
+        """
 
         if len(args) < 1:
             for key in kwargs:
                 self.__setattr__(key, kwargs[key])
-        return
-# or
-# for key, value in kwargs.items():
-# self.__setattr__(key, value)
+            return
 
         try:
             self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
         except IndexError:
             pass
 
     def __str__(self):
+        """
+            returns a string formart of the rectangle
+        """
         msg = "[{}]".format(self.__class__.__name__)
-        msg = msg + " ({:d}) {:d}".format(self.id, self.__x)
-        msg = msg + "/{:d}".format(self.__y)
-        msg = msg + " - {:d}/{:d}".format(self.__width, self.__height)
+        msg = msg + " ({}) {}".format(self.id, self.__x)
+        msg = msg + "/{}".format(self.__y)
+        msg = msg + " - {}/{}".format(self.__width, self.__height)
         return msg
 
     def to_dictionary(self):
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        """
+            returns the dictionary repr of the class
+        """
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width}
 
     @property
     def width(self):
+        """
+            getter function for __width
+            Returns: width
+        """
         return self.__width
 
     @width.setter
     def width(self, width):
+        """
+            setter function for width.
+            Args:
+                value (int): value to be set.
+        """
         run_checks(width=width)
         self.__width = width
 
     @property
     def height(self):
+        """
+            getter function for height
+            Returns: height
+        """
         return self.__height
 
     @height.setter
     def height(self, height):
+        """
+            setter function for height
+            Args:
+                value (int): value to be set.
+        """
         run_checks(height=height)
         self.__height = height
 
     @property
     def x(self):
+        """
+            getter function for x.
+            Returns: x
+        """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """
+            setter function for x.
+            Args:
+                value (int): value to be set.
+        """
         run_checks(x=x)
         self.__x = x
 
     @property
     def y(self):
+        """
+            getter function for y
+            Returns: y
+        """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """
+            setter function for y
+            Args:
+                value (int): value to be set.
+        """
         run_checks(y=y)
         self.__y = y

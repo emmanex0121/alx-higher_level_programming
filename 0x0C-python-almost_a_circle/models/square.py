@@ -8,20 +8,32 @@ class Square(Rectangle):
     """ Square class that inherits from Rectangle class """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+            initialises Square (overrides Rectangle init)
+        """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """
+            Overloading str function
+        """
         msg = "[{}] ".format(self.__class__.__name__)
-        msg = msg + "({:d}) {:d}/{:d} - ".format(self.id, self.x, self.y)
-        msg = msg + "{:d}".format(self.width)
+        msg = msg + "({}) {}/{} - ".format(self.id, self.x, self.y)
+        msg = msg + "{}".format(self.width)
         return msg
 
     @property
     def size(self):
+        """
+            returns the size of the square
+        """
         return self.width
 
     @size.setter
     def size(self, size):
+        """
+            sets the value of size
+        """
         run_checks(width=size, height=size)
         self.width = size
         self.height = size
@@ -29,6 +41,13 @@ class Square(Rectangle):
 # Or    Rectangle.height = size
 
     def update(self, *args, **kwargs):
+        """
+            assigns key/value argument to attributes
+            kwargs is skipped if args is not empty
+            Args:
+                *args -  variable number of no-keyword args
+                **kwargs - variable number of keyworded args
+        """
         if len(args) < 1:
             for value in kwargs:
                 self.__setattr__(value, kwargs[value])
@@ -43,4 +62,7 @@ class Square(Rectangle):
             pass
 
     def to_dictionary(self):
+        """
+            Returns the dictionary representation of a Square
+        """
         return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
