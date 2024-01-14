@@ -2,7 +2,7 @@
 # Program By Phoenix
 """ Module Base class """
 import json
-
+import csv
 
 class Base:
     """ Base Class """
@@ -68,6 +68,12 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Return a list of classes instantiated from a file of JSON strings.
+        Reads from `<cls.__name__>.json`.
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
         try:
             with open(cls.__name__ + ".json", 'r', encoding="utf-8") as json_file:
                 json_string = json_file.read()
@@ -78,3 +84,45 @@ class Base:
         except FileNotFoundError:
             return []
 
+    
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV serialization of a list of objects to a file.
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
+        with open(cls.__name__+ '.csv', 'w', encoding="utf-8") as csv_file:
+            if list_objs is None:
+                csv_file.write([]) 
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id","width","height", "x", "y"]
+                if cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                csv_data = csv.DictWriter(csv_file, fieldnames=fieldnames)
+                for obj in list_objs:
+                    csv_data.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of classes instantiated from a CSV file.
+        Reads from `<cls.__name__>.csv`.
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
+        try:
+            with open(cls.__name__ + ".csv", 'r', encoding="utf-8") as csv_file:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+
+                csv_data = csv.DictReader(csv_file, fieldnames=fieldnames)
+
+                list_dict_csv = [dict([k, int(v)] for k, v in elem.items())
+                                    for elem in csv_data]
+                list_dict_csv = [cls.create(**elem) for elem in list_dict_csv]
+                return list_dict_csv
+        except FileNotFoundError:
+            return []
