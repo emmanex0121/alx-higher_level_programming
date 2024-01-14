@@ -12,7 +12,7 @@ class Square(Rectangle):
 
     def __str__(self):
         msg = "[{}] ".format(self.__class__.__name__)
-        msg = msg + "{:d} {:d}/{:d} - ".format(self.id, self.x, self.y)
+        msg = msg + "({:d}) {:d}/{:d} - ".format(self.id, self.x, self.y)
         msg = msg + "{:d}".format(self.width)
         return msg
 
@@ -41,3 +41,6 @@ class Square(Rectangle):
             self.y = args[3]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
