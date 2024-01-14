@@ -25,7 +25,7 @@ class Base:
             list_dictionaries (list): A list of dictionaries.
         """
         if list_dictionaries in ([], None):
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -39,9 +39,14 @@ class Base:
             if list_objs is None:
                 json.dump([], json_file)
             else:
-                ''' list_dicts = Base.to_json_string(list_objs)'''
                 list_dicts = []
-                for i in list_objs:
-                    list_dicts.append(i.to_dictionary())
+                for obj in list_objs:
+                    list_dicts.append(obj.to_dictionary())
                 json.dump(list_dicts, json_file)
                 '''json_file.write(Base.to_json_string(list_dicts))'''
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string in ([], None):
+            return []
+        return json.loads(json_string)
