@@ -88,6 +88,9 @@ class Rectangle(Base):
         msg = msg + " - {:d}/{:d}".format(self.__width, self.__height)
         return msg
 
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+
     @property
     def width(self):
         return self.__width
