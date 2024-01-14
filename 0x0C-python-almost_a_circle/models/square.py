@@ -27,3 +27,17 @@ class Square(Rectangle):
         self.height = size
 # Or    Rectangle.width = size
 # Or    Rectangle.height = size
+
+    def update(self, *args, **kwargs):
+        if len(args) < 1:
+            for value in kwargs:
+                self.__setattr__(value, kwargs[value])
+            return
+
+        try:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+            self.y = args[3]
+        except IndexError:
+            pass

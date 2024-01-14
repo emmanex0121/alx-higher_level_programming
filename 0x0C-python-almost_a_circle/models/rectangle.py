@@ -67,6 +67,7 @@ class Rectangle(Base):
         if len(args) < 1:
             for key in kwargs:
                 self.__setattr__(key, kwargs[key])
+        return
 # or
 # for key, value in kwargs.items():
 # self.__setattr__(key, value)
