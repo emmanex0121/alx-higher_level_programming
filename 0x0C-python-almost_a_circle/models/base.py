@@ -47,6 +47,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ Converts Json String Representation to Python Object """
         if json_string in ([], None):
             return []
         return json.loads(json_string)
