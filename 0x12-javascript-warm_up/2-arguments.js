@@ -7,3 +7,6 @@ if (argLength === 3) {
 } else {
   console.log('No argument');
 }
+// OR in a single line using ternary operators
+// console.log(count === 2 ? 'No argument' : count === 3 ?
+// 'Argument found' : 'Arguments found');
