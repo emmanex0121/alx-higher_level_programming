@@ -3,7 +3,7 @@ const argLength = process.argv.length;
 if (argLength === 3) {
   console.log('Argument found');
 } else if (argLength > 3) {
-	console.log('Arguments found');
+  console.log('Arguments found');
 } else {
   console.log('NO arguments');
 }
