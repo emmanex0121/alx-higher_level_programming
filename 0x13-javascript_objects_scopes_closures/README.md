@@ -1,0 +1,3 @@
+# JAVASCRIPT OBJECT SCOPES AND CLOSURES
+
+### Emmanuel Nwachukwu
