@@ -3,7 +3,7 @@
 const arg = process.argv[2];
 const num = Number(arg);
 
-if (arg === undefined) {
+if (arg === undefined || isNaN(num)) {
   console.log('Missing size');
 }
 
