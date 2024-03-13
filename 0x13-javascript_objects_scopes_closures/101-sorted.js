@@ -1,9 +1,29 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
 
+
+/*
 const newDict = {};
 
-for (const [key, val] of Object.entries(dict)) {
-  newDict[val] ? newDict[val].push(key) : (newDict[val] = [key]);
-}
+Object.keys(dict).forEach ((key, index) => {
+  const arr = [];
+  //dict[key] produces the value of the key at that index
+  newDict[dict[key]] = arr.push(key);
+});
+console.log(newDict);
+*/
+
+const uniqueValues = Array.from(new Set(Object.values(dict)))
+
+//const newDict = Object.assign(...Array.from(uniqueValues, (value) => ({[value]:[]})))
+
+const newDict = Object.assign(...uniqueValues.map((value) => {
+  return {[value]:[]}
+  }
+
+))
+
+Object.keys(dict).forEach((key) => {
+    newDict[dict[key]].push(key)
+})
 console.log(newDict);
