@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+/*
 let arr = [];
 
 exports.logMe = function (item) {
@@ -10,4 +10,12 @@ exports.logMe = function (item) {
   }
   const lenArr = arr.length - 1;
   console.log(lenArr + ': ' + item);
+};
+*/
+
+let count = 0;
+
+exports.logMe = function (item) {
+  console.log(count + ': ' + item);
+  count++;
 };
