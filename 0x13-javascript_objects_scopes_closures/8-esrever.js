@@ -5,6 +5,7 @@ exports.esrever = function (list) {
 };
 
 /*
+============ METHOD 2 ===========
 exports.esrever = function (list) {
   let reverseList = [];
   for (let i = list.length; i >= 0; i--) {
