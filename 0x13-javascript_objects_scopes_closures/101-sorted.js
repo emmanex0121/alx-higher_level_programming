@@ -4,7 +4,6 @@ const dict = require('./101-data').dict;
 const newDict = {};
 
 Object.keys(dict).forEach((key, index) => {
-  // const arr = [];
   // dict[key] produces the value of the key at that index
   if (newDict[dict[key]] === undefined) {
     newDict[dict[key]] = [key];
