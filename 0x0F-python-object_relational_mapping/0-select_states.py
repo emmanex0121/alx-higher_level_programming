@@ -5,12 +5,12 @@
     Username Password and Database are provided as arguments respectively
 """
 
-from sys import argv
+import sys
 import MySQLdb
 
 if __name__ == '__main__':
-    MySQLdb.connect(user=argv[1],
-                    passwd=argv[2], db=argv[3],
+    MySQLdb.connect(user=sys.argv[1],
+                    passwd=sys.argv[2], db=sys.argv[3],
                     host='localhost', port=3306)
 
     cursor = db.cursor()
