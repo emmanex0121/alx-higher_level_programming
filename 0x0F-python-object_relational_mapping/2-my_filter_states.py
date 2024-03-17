@@ -16,11 +16,13 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states\
-            WHERE name LIKE BINARY '{}'\
-            ORDER BY id ASC".format(argv[4])
+    user_input = argv[4]
 
-    cursor.execute(query)
+    query = "SELECT * FROM states\
+            WHERE name = %s\
+            ORDER BY id ASC"
+
+    cursor.execute(query, (user_input,))
 
     data = cursor.fetchall()
 
